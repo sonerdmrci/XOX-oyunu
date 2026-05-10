@@ -4,22 +4,19 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/background"
-    android:visibility="visible"
-    tools:context=".MainActivity"
-    tools:layout_editor_absoluteY="25dp">
+    android:background="@color/white"
+    tools:context=".MainActivity">
 
     <TextView
         android:id="@+id/titleTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="XOX oyunu"
-        android:textColor="@color/white"
-        android:textSize="34sp"
-        android:layout_marginTop="70dp"
-        android:textStyle="bold|italic"
+        android:text="XOX Oyunu"
+        android:textColor="@color/black"
+        android:textSize="36sp"
+        android:textStyle="bold"
+        android:layout_marginTop="32dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -27,110 +24,101 @@
         android:id="@+id/skorX"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_row="0"
-        android:layout_column="0"
-        android:layout_marginTop="12dp"
-        android:text="@string/skor_x_0"
-        android:textColor="@color/white"
-        android:textSize="24sp"
+        android:text="X Skoru: 0"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/skorO"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/titleTextView" />
-
-    <GridLayout
-        android:id="@+id/gridLayout"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_row="0"
-        android:layout_column="0"
-        android:layout_marginTop="72dp"
-        android:columnCount="3"
-        android:paddingStart="30dp"
-        android:rowCount="3"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/titleTextView"
-        tools:ignore="RtlSymmetry">
-
-        <Button
-            android:id="@+id/b1"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:layout_margin="10dp"
-            android:text="" />
-
-        <Button
-            android:id="@+id/b2"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:layout_margin="10dp" />
-
-        <Button
-            android:id="@+id/b3"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:layout_margin="10dp" />
-
-        <Button
-            android:id="@+id/b4"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:layout_margin="10dp" />
-
-        <Button
-            android:id="@+id/b5"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:layout_margin="10dp" />
-        <Button
-            android:id="@+id/b6"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:layout_margin="10dp" />
-
-        <Button
-            android:id="@+id/b7"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:layout_margin="10dp" />
-
-        <Button
-            android:id="@+id/b8"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:layout_margin="10dp" />
-
-        <Button
-            android:id="@+id/b9"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:layout_margin="10dp" />
-
-
-    </GridLayout>
+        app:layout_constraintHorizontal_chainStyle="packed" />
 
     <TextView
         android:id="@+id/skorO"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="12dp"
-        android:textColor="@color/white"
-        android:text="Skor =  O: 0  "
-        android:textSize="24sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
+        android:text="O Skoru: 0"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:layout_marginTop="16dp"
         app:layout_constraintStart_toEndOf="@+id/skorX"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/titleTextView" />
 
-    <Button
-        android:id="@+id/buttonhile"
-
+    <GridLayout
+        android:id="@+id/gridLayout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@color/white"
-        android:backgroundTint="@color/white"
-        android:text="Button"
-        android:visibility="gone" />
+        android:layout_marginTop="32dp"
+        android:columnCount="3"
+        android:rowCount="3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/skorX">
+
+        <Button
+            android:id="@+id/b1"
+            style="@style/GameButton"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_margin="8dp" />
+
+        <Button
+            android:id="@+id/b2"
+            style="@style/GameButton"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_margin="8dp" />
+
+        <Button
+            android:id="@+id/b3"
+            style="@style/GameButton"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_margin="8dp" />
+
+        <Button
+            android:id="@+id/b4"
+            style="@style/GameButton"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_margin="8dp" />
+
+        <Button
+            android:id="@+id/b5"
+            style="@style/GameButton"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_margin="8dp" />
+
+        <Button
+            android:id="@+id/b6"
+            style="@style/GameButton"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_margin="8dp" />
+
+        <Button
+            android:id="@+id/b7"
+            style="@style/GameButton"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_margin="8dp" />
+
+        <Button
+            android:id="@+id/b8"
+            style="@style/GameButton"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_margin="8dp" />
+
+        <Button
+            android:id="@+id/b9"
+            style="@style/GameButton"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_margin="8dp" />
+
+    </GridLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
